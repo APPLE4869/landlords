@@ -64,9 +64,14 @@ if(isset($_SESSION['userUrl'])) {
 			$facilityExplains_block = explode('&&', $facilityExplains);
 
 			for($i = 0; $i < 12; $i++) {
-				$facilityTexts_block[$i] = $_POST['facilityTexts'.$i];
-				$facilityExplains_block[$i] = $_POST['facilityExplains'.$i];
+				if (isset($_POST['facilityTexts'.$i])) {
+					$facilityTexts_block[$i] = $_POST['facilityTexts'.$i];
+				}
+				if (isset($_POST['facilityExplains'.$i])) {
+					$facilityExplains_block[$i] = $_POST['facilityExplains'.$i];
+				}
 			}
+			$facilityTextsUpdate = '';
 			foreach($facilityTexts_block as $block) {
 				if(empty($facilityTextsSet)) {
 					$facilityTextsUpdate .= $block;
@@ -75,6 +80,7 @@ if(isset($_SESSION['userUrl'])) {
 					$facilityTextsUpdate .= '&&' . $block;
 				}
 			}
+			$facilityExplainsUpdate = '';
 			foreach($facilityExplains_block as $block) {
 				if(empty($facilityExplainsSet)) {
 					$facilityExplainsUpdate .= $block;

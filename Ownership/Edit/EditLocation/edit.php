@@ -58,9 +58,9 @@
 									<th class="location-icon"><img src="../../../Configuration/images/sample.gif"></th>
 								<?php endif; ?>
 								<td class="edit-location-explain">
-									<h5>住所：<?= h($address_block[$i]); ?></h5>
-									<h4>施設名：<?= h($titles_block[$i]); ?></h4>
-									<p>説明<?= h($explain_block[$i]); ?></p>
+									<h5>住所：<?= isset($address_block[$i])?h($address_block[$i]):'未入力'; ?></h5>
+									<h4>施設名：<?= isset($titles_block[$i])?h($titles_block[$i]):'未入力'; ?></h4>
+									<p>説明：<?= isset($explain_block[$i])?h($explain_block[$i]):'未入力'; ?></p>
 								</td>
 								<td><a href="/Landlords/Ownership/Edit/EditLocationDetail/?id=<?= $i+1; ?>">編集する</a></td>
 								<td class="location-delete-btn" id="<?= $i; ?>"><i class="fa fa-trash-o" aria-hidden="true"></i></td>
@@ -68,7 +68,6 @@
 						<?php endfor; ?>
 						</table>
 					</div>
-					
 				</div>
 			</div>
 		</div>

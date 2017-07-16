@@ -50,21 +50,27 @@ if(isset($_SESSION['userUrl'])) {
 	for($i = 1; $i <= 15; $i++) {
 		$j = $i - 1;
 		$locations[$j] = selectMysql('buildings', 'location' . $i, $dbh, $_SESSION['building_id']);
-		list($images_block[$j], $titles_block[$j], $times_block[$j], $address_block[$j], $explain_block[$j], $lat_block[$j], $lng_block[$j], $icon_block[$j]) = explode('{&}', $locations[$j]);
-		list($pref, $addr1, $addr2) = explode('/', $address_block[$j]);
-		$address_block[$j] = $pref . $addr1 . $addr2;
+		if (isset($locations[$j])) {
+			list($images_block[$j], $titles_block[$j], $times_block[$j], $address_block[$j], $explain_block[$j], $lat_block[$j], $lng_block[$j], $icon_block[$j]) = explode('{&}', $locations[$j]);
+		}
+		if (isset($address_block[$j])) {
+			list($pref, $addr1, $addr2) = explode('/', $address_block[$j]);
+			$address_block[$j] = $pref . $addr1 . $addr2;
+		}
 	}
 
 	$icon = [
 		'mapicons01-031.png','mapicons01-032.png','mapicons01-033.png','mapicons01-034.png','mapicons01-035.png','mapicons01-036.png','mapicons01-037.png','mapicons01-038.png','mapicons01-039.png','mapicons01-040.png','mapicons01-041.png','mapicons01-042.png','mapicons01-043.png','mapicons01-044.png','mapicons01-045.png','mapicons01-046.png','mapicons01-047.png','mapicons01-048.png','mapicons01-049.png','mapicons01-050.png','mapicons01-051.png','mapicons01-052.png','mapicons01-056.png','mapicons01-058.png','mapicons01-059.png','mapicons01-060.png','mapicons01-062.png','mapicons01-063.png','mapicons01-066.png','mapicons01-067.png','mapicons01-069.png'
 	];
-	
-	for($i = 0; $i < count($icon_block); $i++) {
-		if($icon_block[$i] !== '') {
-			$num = (int)$icon_block[$i];
-			$locationIcons[$i] = $icon[$num];
-		} else {
-			$locationIcons[$i] = '';
+
+	if (isset($icon_block)) {
+		for($i = 0; $i < count($icon_block); $i++) {
+			if($icon_block[$i] !== '') {
+				$num = (int)$icon_block[$i];
+				$locationIcons[$i] = $icon[$num];
+			} else {
+				$locationIcons[$i] = '';
+			}
 		}
 	}
 

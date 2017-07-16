@@ -13,7 +13,9 @@ if(isset($_SESSION['userUrl'])) {
 
 /* ここから物件の建物情報TableのIDをSESSIONに入れる */
 
-	$getUserName = selectMysql('buildings', 'user', $dbh, h($_GET['id']));
+	if (isset($_GET['id'])) {
+		$getUserName = selectMysql('buildings', 'user', $dbh, h($_GET['id']));
+	}
 
 	if(isset($_GET['id']) && ($getUserName == $_SESSION['userUrl'])) {
 		$_SESSION['building_id'] = h($_GET['id']);

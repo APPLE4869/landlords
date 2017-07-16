@@ -121,13 +121,13 @@
 								<td>
 									<select name="year">
 										<?php for($i = 2017; $i >= 1940; $i--): ?>
-											<?php $yearCheck = ($oldYear == $i) ? 'selected':''; ?>
+											<?php $yearCheck = isset($oldYear) && ($oldYear == $i) ? 'selected':''; ?>
 											<option value="<?= $i; ?>" <?= $yearCheck; ?>><?= $i; ?><p>年</p>
 										<?php endfor; ?>
 									</select>
 									<select name="month">
 										<?php for($i = 1; $i <= 12; $i++): ?>
-											<?php $monthCheck = ($oldMonth == $i) ? 'selected':''; ?>
+											<?php $monthCheck = isset($oldMonth) && ($oldMonth == $i) ? 'selected':''; ?>
 											<option value="<?= $i; ?>" <?= $monthCheck; ?>><?= $i; ?><p>月</p>
 										<?php endfor; ?>
 									</select>
@@ -193,11 +193,11 @@
 								<th>交通機関(1)<span class="red">※</span></th>
 								<td>
 									<div class="partner-circle-column">
-										<input type="radio" id="train-label1" name="traffic1" value="電車" <?= $trafficSpeT1; ?>>
+										<input type="radio" id="train-label1" name="traffic1" value="電車" <?= isset($trafficSpeT1)?$trafficSpeT1:''; ?>>
 										<label for="train-label1">電車</label>
 									</div>
 									<div class="partner-circle-column">
-										<input type="radio" id="bus-label1" name="traffic1" value="バス" <?= $trafficSpeB1; ?>>	
+										<input type="radio" id="bus-label1" name="traffic1" value="バス" <?= isset($trafficSpeB1)?$trafficSpeB1:''; ?>>
 										<label for="bus-label1">バス</label>
 									</div>
 
@@ -271,20 +271,19 @@
 									</div>
 
 									<div class="trafficCon">
-										<h4><?= h($trafficCon1); ?></h4>
+										<h4><?= isset($trafficCon1)?h($trafficCon1):''; ?></h4>
 									</div>
-									
 								</td>
 							</tr>
 							<tr>
 								<th>交通機関(2)</th>
 								<td>
 									<div class="partner-circle-column">
-										<input type="radio" id="train-label2" name="traffic2" value="電車"  <?= $trafficSpeT2; ?>>
+										<input type="radio" id="train-label2" name="traffic2" value="電車"  <?= isset($trafficSpeT2)?$trafficSpeT2:''; ?>>
 										<label for="train-label2">電車</label>
 									</div>
 									<div class="partner-circle-column">
-										<input type="radio" id="bus-label2" name="traffic2" value="バス"  <?= $trafficSpeB2; ?>>
+										<input type="radio" id="bus-label2" name="traffic2" value="バス"  <?= isset($trafficSpeB2)?$trafficSpeB2:''; ?>>
 										<label for="bus-label2">バス</label>
 									</div>
 
@@ -357,7 +356,7 @@
 										徒歩<input type="busWalk2">分
 									</div>
 									<div class="trafficCon">
-										<h4><?= h($trafficCon2); ?></h4>
+										<h4><?= isset($trafficCon2)?h($trafficCon2):''; ?></h4>
 									</div>
 								</td>
 							</tr>
@@ -365,11 +364,11 @@
 								<th>交通機関(3)</th>
 								<td>
 									<div class="partner-circle-column">
-										<input type="radio" id="train-label3" name="traffic3" value="電車"  <?= $trafficSpeT3; ?>>
+										<input type="radio" id="train-label3" name="traffic3" value="電車"  <?= isset($trafficSpeT3)?$trafficSpeT3:''; ?>>
 										<label for="train-label3">電車</label>
 									</div>
 									<div class="partner-circle-column">
-										<input type="radio"　value="バス" id="bus-label3" name="traffic3" value="バス"  <?= $trafficSpeB3; ?>>
+										<input type="radio"　value="バス" id="bus-label3" name="traffic3" value="バス"  <?= isset($trafficSpeB3)?$trafficSpeB3:''; ?>>
 										<label for="bus-label3">バス</label>
 									</div>
 
@@ -443,7 +442,7 @@
 									</div>
 
 									<div class="trafficCon">
-										<h4><?= h($trafficCon3); ?></h4>
+										<h4><?= isset($trafficCon3)?h($trafficCon3):''; ?></h4>
 									</div>
 
 								</td>

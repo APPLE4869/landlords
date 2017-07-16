@@ -226,7 +226,9 @@ if(isset($_SESSION['userUrl'])) {
 
 	//築年月
 	$old = selectMysql('buildings', 'old', $dbh, $_SESSION['building_id']);
-	list($oldYear, $oldMonth) = explode('&', $old);
+	if (isset($old)) {
+		list($oldYear, $oldMonth) = explode('&', $old);
+	}
 
 	//階層
 	$story = selectMysql('buildings', 'building_story', $dbh, $_SESSION['building_id']);
@@ -253,15 +255,21 @@ if(isset($_SESSION['userUrl'])) {
 	$traffic1 = selectMysql('buildings', 'traffic1', $dbh, $_SESSION['building_id']);
 	$traffic2 = selectMysql('buildings', 'traffic2', $dbh, $_SESSION['building_id']);
 	$traffic3 = selectMysql('buildings', 'traffic3', $dbh, $_SESSION['building_id']);
-	list($trafficSpe1, $trafficCon1) = explode('&', $traffic1);
-	list($trafficSpe2, $trafficCon2) = explode('&', $traffic2);
-	list($trafficSpe3, $trafficCon3) = explode('&', $traffic3);
-	$trafficSpeT1 = ($trafficSpe1 == '電車') ? 'checked': '';
-	$trafficSpeB1 = ($trafficSpe1 == 'バス') ? 'checked': '';
-	$trafficSpeT2 = ($trafficSpe2 == '電車') ? 'checked': '';
-	$trafficSpeB2 = ($trafficSpe2 == 'バス') ? 'checked': '';
-	$trafficSpeT3 = ($trafficSpe3 == '電車') ? 'checked': '';
-	$trafficSpeB3 = ($trafficSpe3 == 'バス') ? 'checked': '';
+	if (isset($traffic1)) {
+		list($trafficSpe1, $trafficCon1) = explode('&', $traffic1);
+		$trafficSpeT1 = ($trafficSpe1 == '電車') ? 'checked': '';
+		$trafficSpeB1 = ($trafficSpe1 == 'バス') ? 'checked': '';
+	}
+	if (isset($traffic2)) {
+		list($trafficSpe2, $trafficCon2) = explode('&', $traffic2);
+		$trafficSpeT2 = ($trafficSpe2 == '電車') ? 'checked': '';
+		$trafficSpeB2 = ($trafficSpe2 == 'バス') ? 'checked': '';
+	}
+	if (isset($traffic3)) {
+		list($trafficSpe3, $trafficCon3) = explode('&', $traffic3);
+		$trafficSpeT3 = ($trafficSpe3 == '電車') ? 'checked': '';
+		$trafficSpeB3 = ($trafficSpe3 == 'バス') ? 'checked': '';
+	}
 
 	//建築設備
 	$facility = selectMysql('buildings', 'facility', $dbh, $_SESSION['building_id']);

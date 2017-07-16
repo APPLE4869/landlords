@@ -47,7 +47,7 @@
 						<form id="public-notice-num-form" action="" method="post">
 							<select id="public-notice-num" name="public-notice-num">
 								<?php for ($i = 1; $i <= count($noticesId_block); $i++) : ?>
-									<option <?= $public_notice_check[$i] ?>><?= $i ?>つ公開
+									<option <?= isset($public_notice_check[$i])?$public_notice_check[$i]:''; ?>><?= $i ?>つ公開
 								<?php endfor; ?>
 							</select>
 							<input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">

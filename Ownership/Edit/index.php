@@ -12,7 +12,9 @@ if(isset($_SESSION['userUrl'])) {
 
 /* ここから物件の建物情報TableのIDをSESSIONに入れる */
 
-	$getUrlName = selectMysql('buildings', 'user', $dbh, $_GET['id']);
+	if (isset($_GET['id'])) {
+		$getUrlName = selectMysql('buildings', 'user', $dbh, $_GET['id']);
+	}
 
 	if(isset($_GET['id']) && ($getUrlName == $_SESSION['userUrl'])) {
 		$_SESSION['building_id'] = $_GET['id'];
@@ -72,7 +74,7 @@ if(isset($_SESSION['userUrl'])) {
 			$inUnits += 1;
 		}
 	}
-	$unitsData = ((int)$allUnits / (int)$inUnits) * 100;
+	$unitsData = $inUnits > 0 ? ($allUnits / $inUnits) * 100 : 0;
 
 	//駐車場
 	$parkingSituation = selectMysql('buildings', 'parking_situation', $dbh, $_SESSION['building_id']);

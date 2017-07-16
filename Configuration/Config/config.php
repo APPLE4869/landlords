@@ -34,8 +34,10 @@ function selectMysql($table, $column, $dbh, $id) {
 	$stmt = $dbh->prepare($mysql);
 	$stmt->execute();
 	$result = $stmt->fetch();
-	$result = $result[$column];
-	return $result;
+	if (isset($result[$column])) {
+		$result = $result[$column];
+		return $result;
+	}
 }
 
 function insertMysql($table, $column, $post, $dbh) {

@@ -62,13 +62,13 @@
 								<?php endif; ?>
 								<div class="locationD-explains-column">
 									<h5>施設名</h5>
-									<input type="type" name="title" value="<?= h($title); ?>" placeholder="施設名">
+									<input type="type" name="title" value="<?= isset($title)?h($title):''; ?>" placeholder="施設名">
 								</div>
 								<div class="locationD-explains-column cf">
 									<h5>徒歩所要時間(数字のみ入力)</h5>
 									<div class="locationD-time-column cf">
 										<p>徒歩</p>
-										<input type="type" name="time" value="<?= h($time); ?>"><p>分</p>
+										<input type="type" name="time" value="<?= isset($time)?h($time):''; ?>"><p>分</p>
 									</div>
 								</div>
 								<div class="locationD-explains-column">
@@ -83,21 +83,21 @@
 								</div>
 								<div class="locationD-explains-column">
 									<h5>施設説明</h5>
-									<textarea name="explain"><?= h($explain); ?></textarea>
+									<textarea name="explain"><?= isset($explain)?h($explain):''; ?></textarea>
 								</div>
 								<div class="locationD-address-columns">
 									<div class="locationD-address-column postal-code">
 										<p>郵便番号</p>
-										<input type="text" name="zip1" maxlength="3" value="<?= $zip1; ?>"><span>-</span><input type="text" name="zip2" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip1','zip2','pref','addr1','addr2');" value="<?= $zip2; ?>">
+										<input type="text" name="zip1" maxlength="3" value="<?= isset($zip1)?$zip1:''; ?>"><span>-</span><input type="text" name="zip2" maxlength="4" onKeyUp="AjaxZip3.zip2addr('zip1','zip2','pref','addr1','addr2');" value="<?= isset($zip2)?$zip2:''; ?>">
 									</div></br>
 									<div class="locationD-address-column">
 										<p>都道府県</p>
-										<input type="text" id="pref" name="pref" value="<?= h($pref); ?>">
+										<input type="text" id="pref" name="pref" value="<?= isset($pref)?h($pref):''; ?>">
 									</div>
 									<div class="locationD-address-column">
 										<p>以降の住所</p>
-										<input type="text" id="addr1" name="addr1" value="<?= h($addr1); ?>">
-										<input type="text" id="addr2" name="addr2" value="<?= h($addr2); ?>">
+										<input type="text" id="addr1" name="addr1" value="<?= isset($addr1)?h($addr1):''; ?>">
+										<input type="text" id="addr2" name="addr2" value="<?= isset($addr2)?h($addr2):''; ?>">
 									</div>
 								</div>
 								<div class="locationDetail-maping">
@@ -108,8 +108,8 @@
 									<div class="googleMap-size">
 										<div id="map_canvas"></div>
 									</div>
-									<input type="hidden" id="lat" name ="lat" value="<?= h($lat); ?>">
-									<input type="hidden" id="lng" name ="lng" value="<?= h($lng); ?>">
+									<input type="hidden" id="lat" name ="lat" value="<?= isset($lat)?h($lat):''; ?>">
+									<input type="hidden" id="lng" name ="lng" value="<?= isset($lng)?h($lng):''; ?>">
 								</div>
 							</div>
 							<button type="submit">変更する</button>

@@ -75,8 +75,10 @@ if(isset($_SESSION['userUrl'])) {
 
 	//現在の周辺施設情報を取得
 	$locationsData = selectMysql('buildings', 'location' . $lNum, $dbh, $_SESSION['building_id']);
-	list($image, $title, $time, $address, $explain, $lat, $lng, $icon) = explode('{&}', $locationsData);
-	list($pref, $addr1, $addr2) = explode('/', $address);
+	if (isset($locaionsData)) {
+		list($image, $title, $time, $address, $explain, $lat, $lng, $icon) = explode('{&}', $locationsData);
+		list($pref, $addr1, $addr2) = explode('/', $address);
+	}
 
 	$icons = [
 		'映画館', 'タクシー', 'バス停', '駐輪場', 'バック', 'トイレ', 'カフェ', 'カクテル', '飛行機', '駅', '病院', 'タバコ', '駐車場', 'ゴルフ', 'ガソリンスタンド', 'ファミレス', '花', '葉', 'コアラ', 'イノシシ', '図書館', '博物館', '老人ホーム', '星', 'ハート', 'ピン(赤)', 'ピン(青)', 'ピン(緑)', 'ピン(紫)', 'ピン(黄)'
@@ -84,7 +86,9 @@ if(isset($_SESSION['userUrl'])) {
 
 }
 
-$imageJS = json_encode($image, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+if (isset($image)) {
+	$imageJS = json_encode($image, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
+}
 $userUrl = json_encode($_SESSION['userUrl'], JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT);
 
 

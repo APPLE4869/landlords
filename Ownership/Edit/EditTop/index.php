@@ -12,18 +12,16 @@ if(isset($_SESSION['userUrl'])) {
 
 /*ここからトップページ情報の更新処理*/
 
-	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['token'])) {
+	if(isset($_SERVER['REQUEST_METHOD']) == 'POST' && isset($_POST['token'])) {
 
 		//建物説明更新AREA
 		if(isset($_POST['header-text'])) {
-			
 			updateMysql('buildings', 'header_text', h($_POST['header-text']), $dbh, $_SESSION['building_id']);
 			$updateText = True;
 		}
 
 		//大家さんの自己紹介更新AREA
 		if(isset($_POST['myInfo'])) {
-			
 			updateMysql('buildings', 'myInfo', h($_POST['myInfo']), $dbh, $_SESSION['building_id']);
 			updateMysql('buildings', 'blog_url', $_POST['blogUrl'], $dbh, $_SESSION['building_id']);
 			$updateMyInfo = True;
@@ -58,10 +56,8 @@ if(isset($_SESSION['userUrl'])) {
 		}
 
 		if(isset($_POST['topImages'])) {
-
 			$images = selectMysql('buildings', 'top_images', $dbh, $_SESSION['building_id']);
 			$images_block = explode(' ', $images);
-
 			for ($i = 0; $i < 6; $i++) {
 				if(!empty($_FILES['file' . $i]['name'])) {
 					$file_name = new splFileInfo($_FILES['file' . $i]['name']);
@@ -71,14 +67,13 @@ if(isset($_SESSION['userUrl'])) {
 							move_uploaded_file($_FILES['file' . $i]['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['file' . $i]['name']);
 							$images_block[$i] = $_FILES['file' . $i]['name'];
 							$topImgCheck = true;
-
 						}
 					} catch(Exception $e) {
 						echo 'ERROR:', $e->getMessage().PHP_EOL;
 					}
 				}
 			}
-			if ($topImgCheck) {
+			if (isset($topImgCheck)) {
 				foreach($images_block as $image) {
 					if(empty($imageSet)) {
 						$imageUpdate .= $image;
@@ -91,7 +86,7 @@ if(isset($_SESSION['userUrl'])) {
 				$updateImage = True;
 			}
 
-			if (!$updateImage) {
+			if (!isset($updateImage)) {
 				$errors['topImage'] = '画像変更に失敗しました！';
 			}
 		}
