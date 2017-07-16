@@ -1,0 +1,876 @@
+@charset 'utf-8';
+
+/*
+  #イメージカラー		#017589
+  #サブイメージカラー #029EBC
+*/
+
+/*-------  ここから共通のCSS  --------*/
+
+* {
+  box-sizing: border-box;
+}
+
+*::before {
+  box-sizing: border-box;
+}
+
+*::after {
+  box-sizing: border-box;
+}
+
+html, body,
+ul, ol, li,
+h1, h2, h3, h4, h5, h6, p,
+form, input, div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Hiragino Kaku Gothic Pro', sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  color: #888;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s;
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
+
+	transition: .5s;
+}
+
+.cf::after {
+	content: "";
+	clear: both;
+	display: block;
+}
+
+.icon-b::before {
+	font-family: 'FontAwesome';
+}
+
+.icon-a::after {
+	font-family: 'FontAwesome';
+}
+
+.wrapper {
+	height: 100vh;
+}
+
+/*-------  ここまで共通のCSS  --------*/
+
+/*-------  ここからログイン  --------*/
+
+#login {
+	background: #F2F2F2;
+	min-height: 100vh;
+	padding-bottom: 40px;
+}
+
+.login-title h2 {
+	color: #017589;
+	padding-top: 20vh;
+	font-family: 'Lobster', cursive;
+	font-size: 54px;
+	text-align: center;
+}
+
+#login-form {
+	background: #fff;
+	width: 350px;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+#login-form p {
+	padding-left: 5%;
+	font-size: 15px;
+	font-weight: bold;
+	color: #424242;
+}
+
+#login-form h5 {
+	font-size: 12px;
+	line-height: 18px;
+	text-align: center;
+}
+
+#login-form h6 {
+	font-size: 14px;
+	padding-left: 5%;
+	font-weight: bold;
+	color: #FF0040;
+}
+
+#login-form p:first-child {
+	padding-top: 0;
+}
+
+#login-form p {
+	padding-top: 30px;
+}
+
+#login-form input {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	background: #F2F2F2;
+	border: 2px solid #E6E6E6;
+	font-size: 24px;
+	line-height: 32px;
+}
+
+#login-form input:focus {
+	outline: none;
+	border: 2px solid #029EBC;
+}
+
+#login-form button {
+	cursor: pointer;
+	display: block;
+	font-size: 21px;
+	width: 105px;
+	text-align: center;
+	margin: 0 auto;
+	border-style: none;
+	margin-top: 25px;
+	padding: 3px 5px;
+	background: #029EBC;
+	border: 2px outset #029EBC;
+	color: #fff;
+	border-radius: 7px;
+
+	transition: .3s;
+}
+
+#login-form button:hover {
+	background: #017589;
+	text-shadow: 0 0 3px #fff;
+	border: 2px outset #017589;
+
+	transition: .3s;
+}
+
+#login-form button:active {
+	border: 2px inset #017589;
+}
+
+.new-apply {
+	width: 350px;
+	margin: 0 auto;
+	text-align: right;
+	padding-top: 5px;
+	cursor: pointer;
+}
+
+.new-apply a {
+	color: #848484;
+	font-size: 15px;
+	line-height: 18px;
+
+	transition: .3s;
+}
+
+.new-apply a:hover {
+	color: #6E6E6E;
+
+	transition: .3s;
+}
+
+.right-angle::after {
+	content: '\f101';
+	padding: 0 2px 0 4px;
+}
+
+@media (max-width: 1120px) {
+
+	.login-title h2 {
+		font-size: 60px;
+	}
+
+	#login-form {
+		width: 400px;
+		padding: 35px;
+	}
+
+	#login-form p {
+		font-size: 18px;
+	}
+
+	#login-form h5 {
+		font-size: 15px;
+		line-height: 23px;
+	}
+
+	#login-form h6 {
+		font-size: 16px;
+	}
+
+	#login-form p {
+		padding-top: 35px;
+	}
+
+	#login-form input {
+		font-size: 27px;
+		line-height: 35px;
+	}
+
+	#login-form button {
+		font-size: 24px;
+		width: 112px;
+		margin-top: 28px;
+		padding: 4px 5px;
+	}
+
+	.new-apply {
+		width: 400px;
+	}
+
+	.new-apply a {
+		font-size: 18px;
+		line-height: 21px;
+	}
+
+}
+
+@media (max-width: 760px) {
+
+	.login-title h2 {
+		padding-top: 23vh;
+		font-size: 28px;
+	}
+
+	#login-form {
+		width: 70%;
+		padding: 10px;
+	}
+
+	#login-form p {
+		font-size: 10px;
+	}
+
+	#login-form h5 {
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+	#login-form h6 {
+		font-size: 12px;
+	}
+
+	#login-form p {
+		padding-top: 18px;
+	}
+
+	#login-form input {
+		font-size: 16px;
+		line-height: 23px;
+	}
+
+	#login-form button {
+		font-size: 16px;
+		width: 80px;
+		margin-top: 16px;
+		padding: 2px 3px;
+	}
+
+	.new-apply {
+		width: 70%;
+		padding-top: 2px;
+	}
+
+	.new-apply a {
+		font-size: 10px;
+		line-height: 14px;
+	}
+
+}
+
+/*-------  ここまでログイン  --------*/
+
+/*-------  ここから会員登録  --------*/
+
+.toLogin h2 {
+	color: #017589;
+	padding-top: 8vh;
+	font-family: 'Lobster', cursive;
+	font-size: 54px;
+	text-align: center;
+}
+
+.toLogin h3 {
+	font-size: 14px;
+	line-height: 21px;
+	padding: 3px 0 5px;
+	text-align: center;
+	color: #2E2E2E;
+}
+
+.toLogin h4 {
+	font-size: 18px;
+	line-height: 32px;
+	padding: 3px 0 5px;
+	text-align: center;
+	color: #2E2E2E;
+}
+
+.toLogin a {
+	cursor: pointer;
+	display: block;
+	font-size: 21px;
+	width: 170px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 20px;
+	padding: 5px;
+	background: #2E9AFE;
+	border: 2px outset #2E9AFE;
+	color: #fff;
+	border-radius: 8px;
+
+	transition: .3s;
+}
+
+.toLogin a:hover {
+	background: #58ACFA;
+	text-shadow: 0 0 3px #fff;
+
+	transition: .3s;
+}
+
+.toLogin a:active {
+	border: 2px inset #2E9AFE;
+}
+
+.regConfirm-overlay {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.4);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.regConfirm-modal h2 {
+	color: #fff;
+	font-size: 54px;
+	text-align: center;
+	padding: 8vh 0 5px;
+	font-family: 'Lobster', cursive;
+	text-shadow: 0 0 15px #fff;
+}
+
+.regConfirm-modal form {
+	position: relative;
+	background: #fff;
+	width: 350px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+.regConfirm-modal i {
+	cursor: pointer;
+	position: absolute;
+	top: 12px;
+	right: 12px;
+	font-size: 32px;
+
+	transition: .3s;
+}
+
+.regConfirm-modal i:hover {
+	color: #2E2E2E;
+
+	transition: .3s;
+}
+
+.regConfirm-modal p {
+	text-align: center;
+	font-size: 23px;
+	font-weight: bold;
+	color: #424242;
+}
+
+.regConfirm-modal h3 {
+	text-align: center;
+	font-size: 32px;
+	line-height: 43px;
+	font-weight: bold;
+	color: #017589;
+	padding-bottom: 15px;
+}
+
+.regConfirm-modal h3:nth-of-type(1) {
+	font-size: 18px;
+	line-height: 35px;
+}
+
+.regConfirm-modal button {
+	cursor: pointer;
+	display: block;
+	font-size: 21px;
+	width: 105px;
+	text-align: center;
+	margin: 0 auto;
+	border-style: none;
+	margin-top: 25px;
+	padding: 3px 5px;
+	background: #2E9AFE;
+	border: 2px outset #2E9AFE;
+	color: #fff;
+	border-radius: 7px;
+
+	transition: .3s;
+}
+
+.regConfirm-modal button:hover {
+	background: #58ACFA;
+	text-shadow: 0 0 3px #fff;
+
+	transition: .3s;
+}
+
+.regConfirm-modal button:active {
+	border: 2px inset #2E9AFE;
+}
+
+@media (max-width: 1120px) {
+
+	.toLogin h2 {
+		padding-top: 5vh;
+		font-size: 60px;
+	}
+
+	.toLogin h3 {
+		font-size: 16px;
+		line-height: 23px;
+		padding: 3px 0 7px;
+	}
+
+	.toLogin h4 {
+		font-size: 21px;
+		line-height: 35px;
+		padding: 3px 0 7px;
+	}
+
+	.toLogin a {
+		font-size: 23px;
+		width: 190px;
+		margin-top: 23px;
+		padding: 7px 0;
+	}
+
+	.regConfirm-modal h2 {
+		font-size: 60px;
+		padding: 5vh 0 5px;
+	}
+
+	.regConfirm-modal form {
+		width: 400px;
+	padding: 40px 20px;
+	}
+
+	.regConfirm-modal i {
+		font-size: 34px;
+	}
+
+	.regConfirm-modal p {
+		font-size: 24px;
+	}
+
+	.regConfirm-modal h3 {
+		font-size: 33px;
+		line-height: 45px;
+	}
+
+	.regConfirm-modal h3:nth-of-type(1) {
+		font-size: 23px;
+		line-height: 35px;
+	}
+
+	.regConfirm-modal button {
+		font-size: 24px;
+		width: 112px;
+		margin-top: 28px;
+		padding: 4px 5px;
+	}
+
+}
+
+@media (max-width: 760px) {
+
+	.toLogin h2 {
+		padding-top: 4vh;
+		font-size: 28px;
+	}
+
+	.toLogin h3 {
+		font-size: 8px;
+		line-height: 15px;
+		padding: 1px 0 3px;
+	}
+
+	.toLogin h4 {
+		font-size: 14px;
+		line-height: 21px;
+		padding: 1px 0 3px;
+	}
+
+	.toLogin a {
+		font-size: 15px;
+		width: 120px;
+		margin-top: 15px;
+		padding: 3px 0;
+	}
+
+	.regConfirm-modal h2 {
+		font-size: 28px;
+		padding: 4vh 0 2px;
+	}
+
+	.regConfirm-modal form {
+		width: 70%;
+		padding: 10px 5px;
+	}
+
+	.regConfirm-modal i {
+		font-size: 15px;
+		top: 5px;
+		right: 5px;
+	}
+
+	.regConfirm-modal p {
+		font-size: 12px;
+	}
+
+	.regConfirm-modal h3 {
+		font-size: 14px;
+		line-height: 21px;
+	}
+
+	.regConfirm-modal h3:nth-of-type(1) {
+		font-size: 8px;
+		line-height: 15px;
+	}
+
+	.regConfirm-modal button {
+		font-size: 16px;
+		width: 80px;
+		margin-top: 16px;
+		padding: 2px 3px;
+	}
+
+}
+
+/*-------  ここまで会員登録  --------*/
+
+/*-------  ここからHeader  --------*/
+
+#header {
+	height: 5vh;
+	background: #fff;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	border-bottom: 1px solid #F2F2F2;
+	z-index: 990;
+}
+
+#logo h2 {
+	float: left;
+	font-weight: 900;
+	color: #017589;
+	font-family: 'Lobster', cursive;
+	width: 20%;
+	text-align: center;
+	font-size: 25px;
+	line-height: 5vh;
+}
+
+.right-icon {
+	display: none;
+}
+
+.nav ul {
+	float: right;
+	width: 40%;
+}
+
+.nav li {
+	height: 5vh;
+	width: 33.333%;
+	float: left;
+	cursor: pointer;
+	color: #017589;
+
+	transition: .3s;
+}
+
+.nav li:hover {
+	text-shadow: 0 0 20px #fff;
+	color: #fff;
+	background: #017589;
+
+	transition: .3s;
+}
+
+.nav a {
+	display: block;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 5vh;
+	text-align: center;
+}
+
+@media (max-width: 1120px) {
+
+	#header {
+		height: 7vh;
+		position: fixed;
+	}
+
+	#logo h2 {
+		width: 40%;
+		text-align: center;
+		font-size: 28px;
+		line-height: 7vh;
+	}
+
+	.right-menu ul {
+		width: 50%;
+	}
+
+	.right-menu li {
+		height: 7vh;
+	}
+
+	.right-menu a {
+		font-size: 14px;
+		line-height: 7vh;
+	}
+
+}
+
+@media (max-width: 760px) {
+
+	#header {
+		height: 8vh;
+	}
+
+	#logo h2 {
+		clear: left;
+		width: 100%;
+		text-align: center;
+		font-size: 20px;
+		line-height: 8vh;
+	}
+
+	.right-icon {
+		display: block;
+		position: fixed;
+		width: 40px;
+		top: 0;
+		right: 8px;
+	}
+
+	.right-icon i {
+		margin-top: 1vh;
+		display: block;
+		text-align: center;
+		font-size: 20px;
+		display: block;
+		line-height: 4vh;
+		font-weight: bold;
+		color: #017589;
+	}
+
+	.right-icon p {
+		line-height: 2vh;
+		font-size: 8px;
+		text-align: center;
+		font-weight: bold;
+		color: #017589;
+	}
+
+	#nav {
+		display: none;
+	}
+
+	.nav {
+		z-index: 1200;
+	}
+
+	.nav ul {
+		z-index: 1200;
+		clear: left;
+		width: 85%;
+		position: fixed;
+		top: 8vh;
+		left: 15%;
+		right: 0;
+		bottom: 0;
+		height: 92vh;
+		background: #017589;
+	}
+
+	.nav li {
+		height: 8vh;
+		width: 100%;
+		clear: left;
+		border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+	}
+
+
+	.nav a {
+		line-height: 8vh;
+		font-size: 18px;
+		text-align: center;
+		color: #fff;
+		font-weight: bold;
+	}
+
+}
+
+/*-------  ここまでHeader  --------*/
+
+/*-------  ここからContent  --------*/
+
+#content {
+	padding-top: 5vh;
+	background: #fff;
+	width: 100%;
+	margin: 0 auto;
+	font-size: 0;
+	height: 100vh;
+}
+
+.sub-content {
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	border-right: 1px solid rgba(255, 255, 255, 0.4);
+	height: 95vh;
+	overflow-y: scroll;
+}
+
+.main-content {
+	display: inline-block;
+	vertical-align: top;
+	width: 80%;
+	height: 95vh;
+	overflow-y: scroll;
+}
+
+@media (max-width: 1120px) {
+
+	#content {
+		padding-top: 7vh;
+		height: auto;
+	}
+
+	.main-content {
+		display: block;
+		width: 100%;
+		height: auto;
+		overflow-y: auto;
+	}
+}
+
+@media (max-width: 760px) {
+
+	#content {
+		padding-top: 8vh;
+	}
+
+}
+
+/*-------  ここまでContent  --------*/
+
+/*-------  ここからFooter  --------*/
+
+#footer {
+	z-index: 10;
+	padding: 3vh 0 1vh;
+	height: 16vh;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background: #fff;
+	border-top: 1px solid #F2F2F2;
+}
+
+#social {
+	height: 9vh;
+	position: relative;
+	margin: 0 auto;
+	width: 25%;
+}
+
+.social-icon {
+	position: absolute;
+	width: 45px;
+	height: 45px;
+	border: 2px solid #017589;
+	border-radius: 50%;
+
+	transition: .3s;
+}
+
+.social-icon:nth-of-type(1) {
+	top: 0;
+	left: 25%;
+	transform: translateX(-50%);
+}
+
+.social-icon:nth-of-type(2) {
+	top: 0;
+	left: 75%;
+	transform: translateX(-50%);
+}
+
+.social-icon a {
+	display: block;
+	font-size: 21px;
+	text-align: center;
+	line-height: 45px;
+	color: #017589;
+}
+
+.social-icon:hover {
+	transform: scale(1.1) translateX(-50%);
+	background: rgba(0, 0, 0, 0.2);
+	text-shadow: 0 0 3px solid;
+
+	transition: .3s;
+}
+
+.facebook-icon::before {
+	content: '\f09a';
+}
+
+.twitter-icon::before {
+	content: '\f099';
+}
+
+#footer p {
+	text-align: center;
+	font-size: 14px;
+	line-height: 3vh;
+	color: #017589;
+}
+
+/*-------  ここまでFooter  --------*/

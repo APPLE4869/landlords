@@ -1,0 +1,68 @@
+@charset 'utf-8';
+
+.plan-maker-wrapper {
+	font-size: 0;
+}
+
+.plan-maker-main {
+	height: 100vh;
+	display: inline-block;
+	vertical-align: top;
+	width: 80%;
+}
+
+.parts-menu {
+	padding-top: 5vh;
+	height: 100vh;
+	display: inline-block;
+	vertical-align: top;
+	width: 20%;
+	border-left: 1px solid silver;
+}
+
+.parts-menu p {
+	font-size: 21px;
+}
+
+button {
+	font-size: 20px;
+}
+
+canvas {
+	display: block;
+	margin: 10vh auto 0;
+	border: 10px solid silver;
+	cursor: crosshair;
+}
+
+@media print {
+
+	@page {
+		margin: 0;
+	}
+
+	header {
+		display: none;
+	}
+
+	.plan-maker-main {
+		width: 100%;
+	}
+
+	.parts-menu {
+		display: none;
+	}
+
+	button {
+		display: none;
+	}
+
+	canvas {
+
+	}
+}
+
+.thumbnail {
+	border: 2px solid #999;
+	margin-right: 5px;
+}

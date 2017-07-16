@@ -1,0 +1,210 @@
+@charset 'utf-8';
+
+/*
+  #イメージカラー		#017589
+  #サブイメージカラー #029EBC
+*/
+
+/*-------  ここから共通のCSS  --------*/
+
+.sub-content {
+	width: 14%;
+	position: relative;
+	overflow: hidden;
+	background: linear-gradient(45deg, #029EBC, #017589);
+}
+
+.main-content {
+	width: 86%;
+}
+
+.section-title {
+	width: 100%;
+	background: #0B0B3B;
+	height: 58px;
+}
+
+.section-title h3 {
+	font-size: 32px;
+	line-height: 58px;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+.sub-section-title {
+	padding: 10px 0 20px;
+}
+
+.sub-section-title h3 {
+	color: #0B0B3B;
+	font-weight: 800;
+	text-align: center;
+	font-size: 58px;
+}
+
+.print-buildings select {
+	cursor: pointer;
+	display: block;
+	font-size: 21px;
+	line-height: 32px;
+	border-radius: 3px;
+	padding: 1px 3px;
+	margin: 5px auto 10px;
+	color: #0B0B3B;
+	border: 2px inset #0B0B3B;
+	font-weight: bold;
+
+	transition: .3s;
+}
+
+.print-buildings select:focus {
+	outline: none;
+}
+
+.print-buildings select:hover {
+	border: 2px inset #045FB4;
+
+	transition: .3s;
+}
+
+.print-form i {
+	font-size: 20px;
+	color: #fff;
+}
+
+.print-form button {
+	cursor: pointer;
+	display: block;
+	width: 150px;
+	margin: 10px auto;
+	border-radius: 5px;
+	border: 3px outset #B22222;
+	background: #B22222;
+	text-align: center;
+	font-size: 20px;
+	color: #fff;
+
+	transition: .3s;
+}
+
+.print-form button:hover {
+	text-shadow: 0 0 3px #fff;
+
+	transition: .3s;
+}
+
+.print-form button:focus {
+	outline: none;
+}
+
+.print-form button:active {
+	border: 3px inset #B22222;
+}
+
+/*---- ここからSub-Menuに関するCSS ----*/
+
+.sub-content button {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	cursor: pointer;
+	display: block;
+	width: 144px;
+	margin: 0 auto;
+	border-radius: 5px;
+	border: 3px outset #B22222;
+	background: #B22222;
+	text-align: center;
+	font-size: 18px;
+	color: #fff;
+
+	transition: .3s;
+}
+
+.sub-content button:hover {
+	text-shadow: 0 0 3px #fff;
+
+	transition: .3s;
+}
+
+.sub-content button:focus {
+	outline: none;
+}
+
+.sub-content button:active {
+	border: 3px inset #B22222;
+}
+
+.sub-content-list ul {
+	height: 87vh;
+	overflow-y: scroll;
+	margin-top: 8vh;
+}
+
+.sub-content-list a {
+	display: block;
+	font-size: 12px;
+	line-height: 36px;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	transition: .3s;
+}
+
+.sub-content-list a:hover {
+	background: rgba(0, 0, 0, 0.1);
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+	transition: .3s;
+}
+
+.sub-content-list a:last-child {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.active-menu {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+/*---- ここまでSub-Menuに関するCSS ----*/
+
+@media print {
+
+	@page {
+		margin: 0;
+	}
+
+	#header {
+		display: none;
+	}
+
+	#content {
+		padding-top: 0;
+	}
+
+	.main-content {
+		width: 100%;
+	}
+
+	.sub-content {
+		display: none;
+	}
+
+	.sub-section-title {
+		display: none;
+	}
+
+	.print-buildings {
+		display: none;
+	}
+
+	.print-form {
+		display: none;
+	}
+
+}
+
+/*-------  ここから共通のCSS  --------*/
