@@ -23,7 +23,6 @@ if(isset($_SESSION['userUrl'])) {
 /* ここまで本ページで使用する配列一覧 */
 
 
-
 /*ここから物件削除処理*/
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['token']) && $_POST['buildingDelete']) {
