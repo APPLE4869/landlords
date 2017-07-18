@@ -1,6 +1,6 @@
 
 	<!-- ここからEdit -->
-	
+
 	<div id="content" class="content">
 		<div class="content-inner">
 			<?php include(dirname(__FILE__) . '/../../../Configuration/Frames/edit_sub.php'); ?>
