@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -43,7 +43,6 @@ if(isset($_SESSION['userUrl'])) {
 
 		//写真以外の情報更新
 	   if(isset($_POST['title']) && isset($_POST['time']) && isset($_POST['explain']) && isset($_POST['pref']) && isset($_POST['addr1']) && isset($_POST['addr2']) && isset($_POST['lat']) && isset($_POST['lng']) && isset($_POST['locationDetail-icon'])) {
-
 	   		$address = $_POST['pref'] . '/' . $_POST['addr1'] . '/' . $_POST['addr2'];
 			$locationDUpdate = $image . '{&}' . $_POST['title'] . '{&}' . $_POST['time'] . '{&}' . $address . '{&}' . $_POST['explain'] . '{&}' . $_POST['lat'] . '{&}' . $_POST['lng'] . '{&}' . $_POST['locationDetail-icon'];
 			updateMysql('buildings', 'location' . $lNum, $locationDUpdate, $dbh, $_SESSION['building_id']);
@@ -76,7 +75,7 @@ if(isset($_SESSION['userUrl'])) {
 
 	//現在の周辺施設情報を取得
 	$locationsData = selectMysql('buildings', 'location' . $lNum, $dbh, $_SESSION['building_id']);
-	if (isset($locaionsData)) {
+	if (!empty($locationsData)) {
 		list($image, $title, $time, $address, $explain, $lat, $lng, $icon) = explode('{&}', $locationsData);
 		list($pref, $addr1, $addr2) = explode('/', $address);
 	}

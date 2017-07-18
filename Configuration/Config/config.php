@@ -50,7 +50,7 @@ function insertMysql($table, $column, $post, $dbh) {
 function buildingCheck() {
 	if (!isset($_SESSION['building_id']) && !isset($_GET['id'])) {
 		error_reporting(E_ALL);
-ini_set('display_errors', 1);
+		ini_set('display_errors', 1);
 		header('Location: http://groups.sub.jp/Landlords/Ownership/Top/');
 		exit();
 	}
