@@ -31,44 +31,6 @@
 								</td>
 							</tr>
 							<tr>
-								<th>愛称<span class="red">※</span></th>
-								<td>
-									<div class="partner-text-input">
-										<input type="text" name="nickname" value="<?= h($petName); ?>">
-										<p>ホームページには反映されません。</p>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th>取得年月</th>
-								<td>
-									<div class="partner-text-input">
-										<input type="text" name="getDay" value="<?= h($getDay); ?>">
-										<p>ホームページには反映されません。</p>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<th>取得価格</th>
-								<td>
-									<div class="partner-num-input">
-										<div class="partner-else-column">
-											<input type="text" name="getValue" value="<?= h($getMoney); ?>">万円
-										</div>
-										<div class="partner-else-column">
-											取得時利回り<input type="text" name="yield" value="<?= h($getYeild); ?>">%
-										</div>
-									</div>
-									<div class="partner-else-column">
-										価格公開
-										<select name="moneyPublic">
-											<option value="0" <?= $gMPublicSelect[0]; ?>>公開</option>
-											<option value="1" <?= $gMPublicSelect[1]; ?>>非公開</option>
-										</select>
-									</div>
-								</td>
-							</tr>
-							<tr>
 								<th>種目<span class="red">※</span></th>
 								<td>
 									<select name="type">

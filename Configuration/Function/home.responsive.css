@@ -1,0 +1,459 @@
+
+@media (max-width: 1020px) {
+
+/* イメージカラー rgb(255,255,255) */
+/* サブカラー rgb(51,51,51) */
+
+/* カラーズ rgb(236,241,242) */
+
+/*
+
+*/
+
+/*-------  ここから共通のCSS  --------*/
+
+.container {
+	width: 95%;
+}
+
+.section-title h3 {
+	font-size: 28px;
+	line-height: 35px;
+}
+
+/*-------  ここから共通のCSS  --------*/
+
+/*-------  ここからHeader  --------*/
+
+.header {
+	height: 5vh;
+}
+
+.logo {
+	font-size: 21px;
+	line-height: 5vh;
+}
+
+.nav-menus li {
+	line-height: 5vh;
+	font-size: 16px;
+	padding: 0 5px;
+}
+
+/*-------  ここまでHeader  --------*/
+
+/*-------  ここからTop-Menu  --------*/
+
+.top-menu {
+	margin-top: 5vh;
+	height: 50vh;
+}
+
+.top-menu h1 {
+	font-size: 52px;
+	padding-top: 12vh;
+}
+
+.top-menu h3 {
+	font-size: 28px;
+	padding-top: 7vh;
+}
+
+/*-------  ここまでTop-Menu  --------*/
+
+/*-------  ここからTop-content  --------*/
+
+.content-top {
+	width: 100%;
+	padding-top: 30px;
+}
+
+.content-top-column {
+	float: left;
+	width: 33.333%;
+}
+
+.content-top-column-inner {
+	width: 95%;
+	height: 380px;
+}
+
+.content-top-column-inner img {
+	height: 182.4px;
+}
+
+.content-top-column-inner h3 {
+	font-size: 18px;
+}
+
+.content-top-column-inner p {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+/*-------  ここまでTop-content  --------*/
+
+/*-------  ここからBottom-content  --------*/
+
+.content-bottom {
+	margin: 30px auto;
+}
+
+.content-bottom-main {
+	clear: left;
+	width: 100%;
+}
+
+.content-bottom-sub {
+	clear: right;
+	width: 100%;
+	padding-top: 30px;
+}
+
+/*--- ここからBottom-Content-Main ---*/
+
+.article-column {
+	width: 30%;
+	padding: 4px;
+	margin: 1.666%;
+}
+
+.article-info {
+	margin: 4px 0;
+} 
+
+.article-info tr {
+	height: 32px;
+}
+
+.article-info th {
+	font-size: 15px;
+	width: 60px;
+}
+
+.article-info td {
+	padding-left: 3px;
+	font-size: 12px;
+	width: 160px;
+}
+
+.article-ownerImage {
+	width: 60px;
+	float: left;
+}
+
+.article-ownerImage-inner {
+	width: 58px;
+	padding-top: 58px;
+}
+
+.article-comment {
+	float: left;
+	width: 145px;
+}
+
+.article-comment-inner {
+	border-radius: 5px;
+	width: 145px;
+	height: 58px;
+	margin: 3px auto;
+	padding: 2px;
+}
+
+.article-comment-inner p {
+	font-size: 10px;
+	line-height: 19px;
+}
+
+/*--- ここまでBottom-Content-Main ---*/
+
+/*--- ここからBottom-Content-Sub ---*/
+
+.banner-column {
+	float: left;
+	width: 45%;
+	margin: 0 2.5% 30px;
+	padding-top: 36%;
+}
+
+.banner-column:hover {
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+	transition: .3s;
+}
+
+.article-banner {
+	margin: 0 .5% 30px;
+	float: left;
+	width: 32%;
+}
+
+.article-banner h4 {
+	line-height: 28px;
+	font-size: 14px;
+}
+
+/*--- ここまでBottom-Content-Sub ---*/
+
+/*-------  ここまでBottom-content  --------*/
+
+/*-------  ここからFooter  --------*/
+
+.social-menus {
+	width: 150px;
+	padding: 15px 0;
+}
+
+.social-menus i {
+	font-size: 24px;
+	width: 42px;
+	line-height: 42px;
+}
+
+.footer-menus {
+	width: 85%;
+	margin: 15px auto 30px;
+}
+
+.footer-menus li {
+	width: 33.333%;
+	font-size: 14px;
+	line-height: 28px;
+}
+
+.footer p {
+	font-size: 12px;
+}
+
+/*-------  ここまでFooter  --------*/
+
+}
+
+@media (max-width: 767px) {
+
+/* イメージカラー rgb(255,255,255) */
+/* サブカラー rgb(51,51,51) */
+
+/* カラーズ rgb(236,241,242) */
+
+/*
+
+*/
+
+/*-------  ここから共通のCSS  --------*/
+
+.container {
+	width: 100%;
+}
+
+.section-title h3 {
+	font-size: 24px;
+	line-height: 28px;
+}
+
+/*-------  ここから共通のCSS  --------*/
+
+/*-------  ここからHeader  --------*/
+
+.header {
+	height: 6vh;
+}
+
+.logo {
+	font-size: 18px;
+	line-height: 6vh;
+}
+
+.nav-menus li {
+	line-height: 6vh;
+	font-size: 7px;
+	padding: 0 1px;
+}
+
+.header-mobile-menu li {
+	padding: .5vh;
+	line-height: 2.5vh;
+	font-size: 10px;
+	width: 65px;
+}
+
+/*-------  ここまでHeader  --------*/
+
+/*-------  ここからTop-Menu  --------*/
+
+.top-menu {
+	margin-top: 6vh;
+	height: 50vh;
+}
+
+.top-menu h1 {
+	font-size:38px;
+	padding-top: 10vh;
+}
+
+.top-menu h3 {
+	font-size: 20px;
+	padding-top: 7vh;
+}
+
+/*-------  ここまでTop-Menu  --------*/
+
+/*-------  ここからTop-content  --------*/
+
+.content-top {
+	width: 100%;
+	padding-top: 20px;
+}
+
+.content-top-column {
+	clear: left;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.content-top-column:last-child {
+	margin-bottom: 0;
+}
+
+/* iphone5の横幅98% */
+.content-top-column-inner {
+	width: 313.6px;
+	height: 350px;
+}
+
+.content-top-column-inner img {
+	width: 304px;
+	height: 235.2px;
+}
+
+.content-top-column-inner h3 {
+	font-size: 15px;
+}
+
+.content-top-column-inner p {
+	font-size: 10px;
+	line-height: 16px;
+}
+
+/*-------  ここまでTop-content  --------*/
+
+/*-------  ここからBottom-content  --------*/
+
+.content-bottom {
+	margin: 20px auto;
+}
+
+.content-bottom-sub {
+	padding-top: 20px;
+}
+
+/*--- ここからBottom-Content-Main ---*/
+
+.article-column {
+	width: 272px;
+	padding: 4px;
+	margin: 10px auto;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.article-column:nth-of-type(n+4) {
+	display: none;
+}
+
+.article-info tr {
+	height: 28px;
+}
+
+.article-info th {
+	font-size: 14px;
+	width: 52px;
+}
+
+.article-info td {
+	padding-left: 4px;
+	font-size: 10px;
+	width: 220px;
+}
+
+.article-ownerImage {
+	width: 80px;
+}
+
+.article-ownerImage-inner {
+	width: 75px;
+	padding-top: 75px;
+}
+
+.article-comment {
+	width: 180px;
+}
+
+.article-comment-inner {
+	border-radius: 4px;
+	width: 175px;
+	height: 75px;
+	padding: 2px;
+}
+
+.article-comment-inner p {
+	font-size: 10px;
+	line-height: 25px;
+}
+
+/*--- ここまでBottom-Content-Main ---*/
+
+/*--- ここからBottom-Content-Sub ---*/
+
+.banner-column {
+	clear: left;
+	width: 85%;
+	margin: 0 7.5% 10px;
+	padding-top: 68%;
+}
+
+.article-banner {
+	margin: 0 7.5% 10px;
+	clear: left;
+	width: 85%;
+}
+
+.article-banner h4 {
+	line-height: 24px;
+	font-size: 12px;
+}
+
+/*--- ここまでBottom-Content-Sub ---*/
+
+/*-------  ここまでBottom-content  --------*/
+
+/*-------  ここからFooter  --------*/
+
+.social-menus {
+	width: 120px;
+	padding: 10px 0;
+}
+
+.social-menus i {
+	font-size: 18px;
+	width: 36px;
+	line-height: 36px;
+}
+
+.footer-menus {
+	width: 95%;
+	margin: 10px auto 30px;
+}
+
+.footer-menus li {
+	width: 50%;
+	font-size: 10px;
+	line-height: 30px;
+}
+
+.footer p {
+	font-size: 8px;
+}
+
+/*-------  ここまでFooter  --------*/
+
+}

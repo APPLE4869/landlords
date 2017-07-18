@@ -65,7 +65,7 @@ if(isset($_SESSION['userUrl'])) {
 
 	if (isset($icon_block)) {
 		for($i = 0; $i < count($icon_block); $i++) {
-			if($icon_block[$i] !== '') {
+			if(!empty($icon_block[$i])) {
 				$num = (int)$icon_block[$i];
 				$locationIcons[$i] = $icon[$num];
 			} else {

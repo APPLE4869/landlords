@@ -20,31 +20,6 @@ if(isset($_SESSION['userUrl'])) {
 			updateMysql('buildings', 'building_name', $_POST['name'], $dbh, $_SESSION['building_id']);	
 		}
 
-		//建物愛称
-		if(isset($_POST['nickname'])) {
-			updateMysql('buildings', 'pet_name', $_POST['nickname'], $dbh, $_SESSION['building_id']);
-		}
-
-		//取得年月
-		if(isset($_POST['getDay'])) {
-			updateMysql('buildings', 'get_day', $_POST['getDay'], $dbh, $_SESSION['building_id']);
-		}
-
-		//取得価格
-		if(isset($_POST['getValue'])) {
-			updateMysql('buildings', 'get_money', $_POST['getValue'], $dbh, $_SESSION['building_id']);
-		}
-
-		//取得価格
-		if(isset($_POST['yield'])) {
-			updateMysql('buildings', 'get_yeild', $_POST['yield'], $dbh, $_SESSION['building_id']);
-		}
-
-		//取得価格
-		if(isset($_POST['moneyPublic'])) {
-			updateMysql('buildings', 'get_money_public', $_POST['moneyPublic'], $dbh, $_SESSION['building_id']);
-		}
-
 		//種目
 		if(isset($_POST['type'])) {
 			updateMysql('buildings', 'building_speaces', $_POST['type'], $dbh, $_SESSION['building_id']);
@@ -200,23 +175,6 @@ if(isset($_SESSION['userUrl'])) {
 
 	//ホームページURL
 	$file_name = selectMysql('buildings', 'file_name', $dbh, $_SESSION['building_id']);
-
-	//建物愛称
-	$petName = selectMysql('buildings', 'pet_name', $dbh, $_SESSION['building_id']);
-
-	//取得年月
-	$getDay = selectMysql('buildings', 'get_day', $dbh, $_SESSION['building_id']);
-
-	//取得価格
-	$getMoney = selectMysql('buildings', 'get_money', $dbh, $_SESSION['building_id']);
-
-	//取得時利回り
-	$getYeild = selectMysql('buildings', 'get_yeild', $dbh, $_SESSION['building_id']);
-
-	//取得公開情報
-	$getMoneyPublic = selectMysql('buildings', 'get_money_public', $dbh, $_SESSION['building_id']);
-	$gMPublicSelect[0] = ($getMoneyPublic == 0) ? 'selected': '';
-	$gMPublicSelect[1] = ($getMoneyPublic == 1) ? 'selected': '';
 
 	//種目
 	$speaces = selectMysql('buildings', 'building_speaces', $dbh, $_SESSION['building_id']);

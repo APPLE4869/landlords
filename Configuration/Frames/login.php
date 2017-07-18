@@ -11,10 +11,14 @@
 		<div id="login-form">
 			<form action="" method="post">
 				<p>ユーザー名またはメールアドレス</p>
-				<h6><?= $errors['user']; ?></h6>
+				<?php if (isset($errors['user'])) : ?>
+					<h6><?= $errors['user']; ?></h6>
+				<?php endif; ?>
 				<input type="text" name="name">
 				<p>パスワード</p>
-				<h6><?= $errors['password']; ?></h6>
+				<?php if (isset($errors['password'])) : ?>
+					<h6><?= $errors['password']; ?></h6>
+				<?php endif; ?>
 				<input type="password" name="password">
 				<button type="submit">ログイン</button>
 			</form>

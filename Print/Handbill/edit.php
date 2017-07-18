@@ -11,7 +11,7 @@
 					<form id="buildingNum" action="" method="post">
 						<select name="buildingNum" onChange='$("#buildingNum").submit();'>
 							<?php for ($i = 0; $i < count($buildingsNames); $i++) : ?>
-								<option value="<?= $i; ?>" <?= h($selected[$i]); ?>><?= h($buildingsNames[$i]); ?></option>
+								<option value="<?= $i; ?>" <?= isset($selected[$i])?h($selected[$i]):''; ?>><?= h($buildingsNames[$i]); ?></option>
 							<?php endfor; ?>
 						</select>
 						<input type="hidden" name="token" value="<?= h($_SESSION['token']); ?>">

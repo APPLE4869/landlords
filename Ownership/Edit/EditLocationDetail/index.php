@@ -19,8 +19,9 @@ if(isset($_SESSION['userUrl'])) {
 
 		//現在の周辺施設情報を取得
 		$locationsData = selectMysql('buildings', 'location' . $lNum, $dbh, $_SESSION['building_id']);
-		list($image, $title, $time, $address, $explain, $lat, $lng, $icon) = explode('{&}', $locationsData);
-
+		if (isset($locationsData)) {
+			list($image, $title, $time, $address, $explain, $lat, $lng, $icon) = explode('{&}', $locationsData);
+		}
 
 		if (!empty($_FILES['file']['name'])) {
 			$file_name = new splFileInfo($_FILES['file']['name']);

@@ -13,9 +13,13 @@ $facilityBlock = [];
 $nameBlock = [];
 
 function trafficOut($traffic) {
-	list($non, $traffic) = explode('&', $traffic);
-	list($wayside, $station, $time) = explode(' ', $traffic);
-	return [$wayside, $station, $time];
+	if (isset($traffic)) {
+		list($non, $traffic) = explode('&', $traffic);
+	}
+	if (isset($traffic)) {
+		list($wayside, $station, $time) = explode(' ', $traffic);
+		return [$wayside, $station, $time];
+	}
 }
 
 $mysql = 'select * from buildings where user = \'' . $_SESSION['userUrl'] . '\'';
@@ -37,7 +41,9 @@ foreach($dbh->query($mysql) as $row) {
 	$construct = $row['building_construct'] . $row['building_story'] . '階建';
 	array_push($constructBlock, $construct);
 
-	list($oldYear, $oldMonth) = explode('&', $row['old']);
+	if (isset($row['old'])) {
+		list($oldYear, $oldMonth) = explode('&', $row['old']);
+	}
 	$old = $oldYear . '年' . $oldMonth . '月';
 	array_push($oldBlock, $old);
 

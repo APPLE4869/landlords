@@ -28,7 +28,7 @@
 							</tr>
 							<tr>
 								<th>築年月</th>
-								<td><?= h($oldDisplay); ?></td>
+								<td><?= isset($oldDisplay)?h($oldDisplay):''; ?></td>
 							</tr>
 							<tr>
 								<th>所在地</th>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 session_start();
 
@@ -36,7 +36,7 @@ if(isset($_SESSION['userUrl'])) {
 			} catch(Exception $e) {
 				echo 'ERROR:', $e->getMessage().PHP_EOL;
 			}
-			if (!$topImgCheck) {
+			if (!isset($topImgCheck)) {
 				$errors['topImage'] = '画像変更に失敗しました！';
 			}
 		}

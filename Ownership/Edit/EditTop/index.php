@@ -48,7 +48,7 @@ if(isset($_SESSION['userUrl'])) {
 				} catch(Exception $e) {
 					echo 'ERROR:', $e->getMessage().PHP_EOL;
 				}
-				if (!$topImgCheck) {
+				if (!isset($topImgCheck)) {
 					$errors['topImage'] = '画像変更に失敗しました！';
 				}
 			}
@@ -73,6 +73,7 @@ if(isset($_SESSION['userUrl'])) {
 					}
 				}
 			}
+			$imageUpdate = '';
 			if (isset($topImgCheck)) {
 				foreach($images_block as $image) {
 					if(empty($imageSet)) {

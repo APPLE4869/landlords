@@ -47,10 +47,12 @@ if(isset($_SESSION['userUrl'])) {
 
 	//築年月
 	$old = selectMysql('buildings', 'old', $dbh, $_SESSION['building_id']);
-	list($oldYear, $oldMonth) = explode('&', $old);
-	$oldBuilding = date('Y') - $oldYear;
-	$oldBuilding = (date('m') < $oldMonth) ? $oldBuilding - 1: $oldBuilding;
-	$oldDisplay = $oldYear . '年' . $oldMonth . '月築(築' . $oldBuilding . '年)';//築年月[表示]
+	if (!empty($old)) {
+		list($oldYear, $oldMonth) = explode('&', $old);
+		$oldBuilding = date('Y') - $oldYear;
+		$oldBuilding = (date('m') < $oldMonth) ? $oldBuilding - 1: $oldBuilding;
+		$oldDisplay = $oldYear . '年' . $oldMonth . '月築(築' . $oldBuilding . '年)';//築年月[表示]
+	}
 
 	//住所
 	$pref = selectMysql('buildings', 'prefectures', $dbh, $_SESSION['building_id']);

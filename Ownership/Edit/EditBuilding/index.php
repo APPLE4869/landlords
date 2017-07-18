@@ -52,11 +52,9 @@ if(isset($_SESSION['userUrl'])) {
 			if (!$imageUpdate) {
 				$errors['topImage'] = '画像変更に失敗しました！';
 			}
-			
 		}
 
 		if(isset($_POST['facilitysSet'])) {
-			
 			$facilityTexts = selectMysql('buildings', 'facility_texts', $dbh, $_SESSION['building_id']);
 			$facilityTexts_block = explode('&&', $facilityTexts);
 
@@ -103,7 +101,6 @@ if(isset($_SESSION['userUrl'])) {
 
 					$file_name = new splFileInfo($_FILES['file' . $i]['name']);
 					$extension = $file_name->getExtension();
-					
 					try{
 						if(is_uploaded_file($_FILES['file'.$i]['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
 							move_uploaded_file($_FILES['file'.$i]['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['file'.$i]['name']);
@@ -116,6 +113,7 @@ if(isset($_SESSION['userUrl'])) {
 				}
 			}
 
+			$imageUpdate = '';
 			if (isset($fcImgUpdate)) {
 				foreach($facilityImages_block as $block) {
 					if(empty($imageSet)) {
