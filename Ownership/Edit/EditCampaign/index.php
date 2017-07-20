@@ -11,7 +11,6 @@ buildingCheck();
 if(isset($_SESSION['userUrl'])) {
 
 /*ここからキャンペーン情報の更新処理*/
-
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['token'])) {
 		checkToken();
 
@@ -28,8 +27,9 @@ if(isset($_SESSION['userUrl'])) {
 			$extension = $file_name->getExtension();
 			try{
 				if(is_uploaded_file($_FILES['file']['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
-					move_uploaded_file($_FILES['file']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['file']['name']);
-					updateMysql('buildings', 'campaign_image', $_FILES['file']['name'], $dbh, $_SESSION['building_id']);
+					$storeFildName = date('Ymdhis').$_SESSION['building_id'].'.jpg';
+					move_uploaded_file($_FILES['file']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
+					updateMysql('buildings', 'campaign_image', $storeFildName, $dbh, $_SESSION['building_id']);
 					$updateImage = True;
 
 				}

@@ -21,15 +21,16 @@ if(isset($_SESSION['userUrl'])) {
 			$extension = $file_name->getExtension();
 			try{
 				if(is_uploaded_file($_FILES['file0']['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
-					move_uploaded_file($_FILES['file0']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['file0']['name']);
-					updateMysql('buildings', 'appearance1', $_FILES['file0']['name'], $dbh, $_SESSION['building_id']);
+					$storeFildName = date('Ymdhis').$_SESSION['building_id'].'0'.'.jpg';
+					move_uploaded_file($_FILES['file0']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
+					updateMysql('buildings', 'appearance1', $storeFildName, $dbh, $_SESSION['building_id']);
 					$imageUpdate = true;
 
 				}
 			} catch(Exception $e) {
 				echo 'ERROR:', $e->getMessage().PHP_EOL;
 			}
-			if (!$imageUpdate) {
+			if (!isset($imageUpdate)) {
 				$errors['topImage'] = '画像変更に失敗しました！';
 			}
 
@@ -41,8 +42,9 @@ if(isset($_SESSION['userUrl'])) {
 			$extension = $file_name->getExtension();
 			try{
 				if(is_uploaded_file($_FILES['file1']['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
-					move_uploaded_file($_FILES['file1']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['file1']['name']);
-					updateMysql('buildings', 'appearance2', $_FILES['file1']['name'], $dbh, $_SESSION['building_id']);
+					$storeFildName = date('Ymdhis').$_SESSION['building_id'].'1'.'.jpg';
+					move_uploaded_file($_FILES['file1']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
+					updateMysql('buildings', 'appearance2', $storeFildName, $dbh, $_SESSION['building_id']);
 					$imageUpdate = true;
 
 				}
@@ -103,8 +105,9 @@ if(isset($_SESSION['userUrl'])) {
 					$extension = $file_name->getExtension();
 					try{
 						if(is_uploaded_file($_FILES['file'.$i]['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
-							move_uploaded_file($_FILES['file'.$i]['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['file'.$i]['name']);
-							$facilityImages_block[$i - 2] = $_FILES['file'.$i]['name'];
+							$storeFildName = date('Ymdhis').$_SESSION['building_id'].$i.'.jpg';
+							move_uploaded_file($_FILES['file'.$i]['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
+							$facilityImages_block[$i - 2] = $storeFildName;
 							$fcImgUpdate = true;
 						}
 					} catch(Exception $e) {
@@ -145,6 +148,7 @@ if(isset($_SESSION['userUrl'])) {
 				$facilityImages = selectMysql('buildings', 'facility_images', $dbh, $_SESSION['building_id']);
 				$facilityImages_block = explode(' ', $facilityImages);
 				unset($facilityImages_block[$imgId]);
+				$imageUpdate = '';
 				foreach($facilityImages_block as $image) {
 					if(empty($imageSet)) {
 						$imageUpdate .= $image;
