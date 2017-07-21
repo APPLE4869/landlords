@@ -12,7 +12,6 @@ if(isset($_SESSION['userUrl'])) {
 
 	$hadBuilding = [];
 	$perTitle = [];
-	$perPetName = [];
 	$perImage = [];
 	$perAddress = [];
 	$roomId_block = [];
@@ -95,7 +94,6 @@ if(isset($_SESSION['userUrl'])) {
 
 		array_push($hadBuilding, $result[$i]['id']);
 		array_push($perTitle, selectMysql('buildings', 'building_name', $dbh, $result[$i]['id']));
-		array_push($perPetName, selectMysql('buildings', 'pet_name', $dbh, $result[$i]['id']));
 
 		$images = selectMysql('buildings', 'top_images', $dbh, $result[$i]['id']);
 		$perImage[$i] = explode(' ', $images);
@@ -105,7 +103,7 @@ if(isset($_SESSION['userUrl'])) {
 		$addr2 = selectMysql('buildings', 'addr2', $dbh, $result[$i]['id']);
 		$address = $pref . $addr1 . $addr2;
 		array_push($perAddress, $address);
-		
+
 		$roomId = selectMysql('buildings', 'room_id', $dbh, $result[$i]['id']);
 		$roomId_block = explode(' ', $roomId);
 		$allUnits = count($roomId_block);
