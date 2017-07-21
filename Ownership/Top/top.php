@@ -48,7 +48,7 @@
 								<table>
 									<tr>
 										<th>物件名(愛称)</th>
-										<td><?= h($perTitle[$i]); ?></br>(<?= h($perPetName[$i]); ?>)</td>
+										<td><?= h($perTitle[$i]); ?></td>
 									</tr>
 									<tr>
 										<th>所在地</th>
