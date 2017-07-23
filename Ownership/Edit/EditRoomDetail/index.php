@@ -217,7 +217,7 @@ if(isset($_SESSION['userUrl'])) {
 						$storeFildName = date('Ymdhis').$_SESSION['building_id'].'B2'.'.jpg';
 						move_uploaded_file($_FILES['fileB2']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
 						updateMysql('rooms', 'preview_image', $storeFildName, $dbh, $getRoomId);
-						$bImgCheck = true;$storeFildName
+						$bImgCheck = true;
 
 					}
 				} catch(Exception $e) {
@@ -345,8 +345,8 @@ if(isset($_SESSION['userUrl'])) {
 	$depositFeild_select[0] = ($depositFeild == 'カ月') ? 'selected':'' ;
 	$depositFeild_select[1] = ($depositFeild == '円') ? 'selected':'' ;
 	list($shikiMoneyValue, $shikiMoneyFeild) = explode('&', $shikiMoney);
-	$$shikiMoneyFeild_select[0] = ($$shikiMoneyFeild == 'カ月') ? 'selected':'' ;
-	$$shikiMoneyFeild_select[1] = ($$shikiMoneyFeild == '円') ? 'selected':'' ;
+	$shikiMoneyFeild_select[0] = ($$shikiMoneyFeild == 'カ月') ? 'selected':'' ;
+	$shikiMoneyFeild_select[1] = ($$shikiMoneyFeild == '円') ? 'selected':'' ;
 	list($keyMoneyValue, $keyMoneyFeild) = explode('&', $keyMoney);
 	$keyMoneyFeild_select[0] = ($keyMoneyFeild == 'カ月') ? 'selected':'' ;
 	$keyMoneyFeild_select[1] = ($keyMoneyFeild == '円') ? 'selected':'' ;

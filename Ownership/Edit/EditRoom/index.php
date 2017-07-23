@@ -57,6 +57,7 @@ if(isset($_SESSION['userUrl'])) {
 
 			array_push($roomId_block, $result['id']);
 
+			$roomIdUpdate = "";
 			foreach($roomId_block as $block) {
 				if(empty($roomCheck)) {
 					$roomIdUpdate .= $block;
