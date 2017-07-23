@@ -154,11 +154,12 @@ if(isset($_SESSION['userUrl'])) {
 
 					$file_name = new splFileInfo($_FILES['file' . $i]['name']);
 					$extension = $file_name->getExtension();
-					
+
 					try{
 						if(is_uploaded_file($_FILES['file'.$i]['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
-							move_uploaded_file($_FILES['file'.$i]['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['file'.$i]['name']);
-							$previewImages_block[$i] = $_FILES['file'.$i]['name'];
+							$storeFildName = date('Ymdhis').$_SESSION['building_id'].$i.'.jpg';
+							move_uploaded_file($_FILES['file'.$i]['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
+							$previewImages_block[$i] = $storeFildName;
 							$mImgUpdate = true;
 						}
 					} catch(Exception $e) {
@@ -167,6 +168,7 @@ if(isset($_SESSION['userUrl'])) {
 				}
 			}
 
+			$imageUpdate = '';
 			if (isset($mImgUpdate)) {
 				foreach($previewImages_block as $block) {
 					if(empty($imageSet)) {
@@ -192,8 +194,9 @@ if(isset($_SESSION['userUrl'])) {
 				$extension = $file_name->getExtension();
 				try{
 					if(is_uploaded_file($_FILES['fileB1']['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
-						move_uploaded_file($_FILES['fileB1']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['fileB1']['name']);
-						updateMysql('rooms', 'floor_image', $_FILES['fileB1']['name'], $dbh, $getRoomId);
+						$storeFildName = date('Ymdhis').$_SESSION['building_id'].'B1'.'.jpg';
+						move_uploaded_file($_FILES['fileB1']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
+						updateMysql('rooms', 'floor_image', $storeFildName, $dbh, $getRoomId);
 						$bImgCheck = true;
 					}
 				} catch(Exception $e) {
@@ -211,9 +214,10 @@ if(isset($_SESSION['userUrl'])) {
 				$extension = $file_name->getExtension();
 				try{
 					if(is_uploaded_file($_FILES['fileB2']['tmp_name']) && ($extension == 'png' || $extension == 'jpg' || $extension == 'gif' || $extension == 'jpeg' ||  $extension == 'bmp'  || $extension == 'tiff' || $extension == 'PNG' || $extension == 'JPG' || $extension == 'GIF' || $extension == 'JPEG' || $extension == 'BMP' || $extension == 'TIFF')) {
-						move_uploaded_file($_FILES['fileB2']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $_FILES['fileB2']['name']);
-						updateMysql('rooms', 'preview_image', $_FILES['fileB2']['name'], $dbh, $getRoomId);
-						$bImgCheck = true;
+						$storeFildName = date('Ymdhis').$_SESSION['building_id'].'B2'.'.jpg';
+						move_uploaded_file($_FILES['fileB2']['tmp_name'], './../../../../MyHome/Landlord/' . $_SESSION['userUrl'] . '/images/' . $storeFildName);
+						updateMysql('rooms', 'preview_image', $storeFildName, $dbh, $getRoomId);
+						$bImgCheck = true;$storeFildName
 
 					}
 				} catch(Exception $e) {
